@@ -483,6 +483,7 @@ def higherOrderPlay(curr, matrix):
     
     start = eval(curr.split('|')[0])
     start = start[:len(start)-1]
+    arg_curr = curr
 
     currNote = start
 
@@ -491,10 +492,8 @@ def higherOrderPlay(curr, matrix):
         try:
             candidates = matrix[curr]
         except:
-            curr = start
+            curr = arg_curr
             candidates = matrix[curr]
-
-        print(curr)
         
         t = threading.Thread(target = playNote, args = [currNote])
         t.start()

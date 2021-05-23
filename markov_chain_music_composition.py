@@ -115,7 +115,7 @@ def playOriginalMelody(notes):
         else:
             player.note_off(note[1], note[2])
 
-# function for distinguishing different notes happening at the same time and grouping them into one atomar entity
+# function for distinguishing different notes happening at the same time and grouping them into one atomar event
 def distinguishSimultaneousEvents(notes):
     
     simultaneousEvents = []
@@ -259,7 +259,7 @@ def zeroOrderPlay(transition, wait):
         t.start()
         time.sleep(wait[waitTime])
 
-# function for creating Markov chain in which the current atomar entity depends only on the last
+# function for creating Markov chain in which the current atomar event depends only on the last
 def firstOrderComposition(events):
     
     plays = []
